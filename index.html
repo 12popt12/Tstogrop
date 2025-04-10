@@ -23,6 +23,17 @@
             --black-color: #000000;
             --gray-color: #6c757d;
             --light-gray: #e9ecef;
+            
+            /* ألوان الوضع الداكن */
+            --dark-bg: #121212;
+            --dark-card: #1e1e1e;
+            --dark-text: #e0e0e0;
+            --dark-border: #333;
+            
+            /* حجم الخط */
+            --font-size-normal: 16px;
+            --font-size-large: 18px;
+            --font-size-xlarge: 20px;
         }
 
         * {
@@ -34,6 +45,7 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: var(--font-size-normal);
         }
 
         body {
@@ -41,6 +53,143 @@
             color: var(--dark-color);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* وضع الداكن */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .navbar,
+        body.dark-mode .service-card,
+        body.dark-mode .features,
+        body.dark-mode .testimonial-item,
+        body.dark-mode .contact-form,
+        body.dark-mode .value-item,
+        body.dark-mode .team-member,
+        body.dark-mode .mission,
+        body.dark-mode .vision,
+        body.dark-mode .privacy-content,
+        body.dark-mode .settings-content,
+        body.dark-mode .ai-panel,
+        body.dark-mode .settings-option {
+            background-color: var(--dark-card);
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .section-title,
+        body.dark-mode .about-text h2,
+        body.dark-mode .contact-info h2,
+        body.dark-mode .contact-form h2,
+        body.dark-mode .service-card h3,
+        body.dark-mode .feature-text h3,
+        body.dark-mode .value-item h3,
+        body.dark-mode .team-member h3,
+        body.dark-mode .mission h3,
+        body.dark-mode .vision h3,
+        body.dark-mode .faq-question,
+        body.dark-mode .ai-response h3,
+        body.dark-mode .settings-option h3 {
+            color: var(--dark-text);
+        }
+        
+        body.dark-mode .section-subtitle,
+        body.dark-mode .service-card p,
+        body.dark-mode .feature-text p,
+        body.dark-mode .value-item p,
+        body.dark-mode .team-member span,
+        body.dark-mode .mission p,
+        body.dark-mode .vision p,
+        body.dark-mode .faq-answer p,
+        body.dark-mode .ai-response p,
+        body.dark-mode .toggle-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea,
+        body.dark-mode .ai-input,
+        body.dark-mode select {
+            background-color: #2d2d2d;
+            color: var(--dark-text);
+            border-color: var(--dark-border);
+        }
+        
+        body.dark-mode .footer {
+            background-color: #1a1a1a;
+        }
+        
+        body.dark-mode .settings-option {
+            background-color: #252525;
+        }
+
+        /* الوضع المبسط */
+        body.simple-mode {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6b8cae;
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+        
+        body.simple-mode .btn {
+            box-shadow: none;
+            border-radius: 5px;
+        }
+        
+        body.simple-mode .service-card,
+        body.simple-mode .testimonial-item,
+        body.simple-mode .value-item,
+        body.simple-mode .team-member,
+        body.simple-mode .mission,
+        body.simple-mode .vision {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        body.simple-mode .service-icon,
+        body.simple-mode .feature-icon {
+            border-radius: 10px;
+        }
+        
+        body.simple-mode .section-title::after {
+            width: 60px;
+            height: 3px;
+        }
+        
+        /* حجم الخط الكبير */
+        body.large-text {
+            --font-size-normal: 18px;
+            --font-size-large: 20px;
+            --font-size-xlarge: 22px;
+        }
+        
+        body.large-text .section-title {
+            font-size: 38px;
+        }
+        
+        body.large-text .section-subtitle,
+        body.large-text .service-card p,
+        body.large-text .feature-text p,
+        body.large-text .value-item p,
+        body.large-text .team-member span,
+        body.large-text .mission p,
+        body.large-text .vision p,
+        body.large-text .faq-answer p,
+        body.large-text .ai-response p,
+        body.large-text .nav-links a,
+        body.large-text .btn {
+            font-size: var(--font-size-large);
+        }
+        
+        body.large-text .service-card h3,
+        body.large-text .feature-text h3,
+        body.large-text .value-item h3,
+        body.large-text .team-member h3,
+        body.large-text .mission h3,
+        body.large-text .vision h3,
+        body.large-text .faq-question {
+            font-size: var(--font-size-xlarge);
         }
 
         a {
@@ -1011,6 +1160,293 @@
             border-radius: 50%;
         }
 
+        /* صفحة الإعدادات */
+        .settings-page {
+            padding-top: 120px;
+        }
+
+        .settings-content {
+            background: var(--white-color);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .settings-content h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .settings-option {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f9f9ff;
+            transition: all 0.3s ease;
+        }
+        
+        .settings-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-option h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .settings-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .settings-description {
+            color: var(--gray-color);
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .toggle-label {
+            margin-right: 15px;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        
+        /* ألوان الموقع */
+        .color-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-option.active {
+            border-color: var(--dark-color);
+            transform: scale(1.1);
+        }
+        
+        .color-option.blue {
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+        }
+        
+        .color-option.green {
+            background: linear-gradient(135deg, #28a745, #5cb85c);
+        }
+        
+        .color-option.red {
+            background: linear-gradient(135deg, #dc3545, #d9534f);
+        }
+        
+        .color-option.orange {
+            background: linear-gradient(135deg, #fd7e14, #f0ad4e);
+        }
+        
+        .color-option.purple {
+            background: linear-gradient(135deg, #6f42c1, #9d65c9);
+        }
+
+        /* لوحة الذكاء الاصطناعي */
+        .ai-panel {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 350px;
+            background: var(--white-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            overflow: hidden;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .ai-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .ai-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .ai-header i {
+            font-size: 20px;
+        }
+
+        .ai-body {
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .ai-response {
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ai-response h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .ai-response p {
+            font-size: 14px;
+            color: var(--gray-color);
+            line-height: 1.6;
+        }
+        
+        .ai-suggestions {
+            margin-top: 10px;
+        }
+        
+        .ai-suggestion {
+            display: inline-block;
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-suggestion:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .ai-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .ai-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .ai-input button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-input button:hover {
+            transform: rotate(30deg);
+        }
+
+        .ai-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(78, 84, 200, 0.4);
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-toggle:hover {
+            transform: scale(1.1);
+        }
+
         /* الفوتر */
         .footer {
             background: var(--dark-color);
@@ -1156,6 +1592,12 @@
                 padding-left: 0;
                 margin-bottom: 50px;
             }
+            
+            .ai-panel {
+                width: 300px;
+                left: 20px;
+                bottom: 20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1217,6 +1659,17 @@
             .btn {
                 padding: 10px 25px;
             }
+            
+            .ai-panel {
+                width: 90%;
+                left: 5%;
+                bottom: 80px;
+            }
+            
+            .ai-toggle {
+                left: 20px;
+                bottom: 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1251,12 +1704,17 @@
             .iv-con-logo {
                 font-size: 25vw;
             }
+            
+            .color-options {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
     <!-- شعار IV CON الخلفي -->
-    <div class="iv-con">IV</div>
+    <div class="iv-con-logo">IV</div>
 
     <!-- شريط التنقل -->
     <nav class="navbar">
@@ -1266,9 +1724,10 @@
                 <span>IV</span>
             </a>
             <ul class="nav-links animate__animated animate__fadeInDown">
-                <li><a href="#" class="active" onclick="window.location.reload()">الرئيسية</a></li>
-                <li><a href="https://h.top4top.io/p_33854361y0.png">من نحن</a></li>
-                <li><a href="https://chat.whatsapp.com/B6liB13RBdy66GneO1tui6">تواصل معنا</a></li>
+                <li><a href="#" class="active" onclick="showPage('home')">الرئيسية</a></li>
+                <li><a href="#" onclick="showPage('about')">من نحن</a></li>
+                <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
+                <li><a href="#" onclick="showPage('settings')">الإعدادات</a></li>
             </ul>
             <div class="hamburger animate__animated animate__fadeInRight">
                 <span></span>
@@ -1461,6 +1920,304 @@
         </div>
     </section>
 
+    <!-- صفحة من نحن -->
+    <section id="about" class="about-page" style="display:none;">
+        <div class="container">
+            <div class="page-header">
+                <h1>من نحن</h1>
+                <p>تعرف على فريق IV CON والقيم التي نؤمن بها</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">           
+                </div>
+                <div class="about-text">
+                    <h2>قصتنا</h2>
+                    <p>نحن فريق من المطورين والمهندسين المختصين في مجال التطبيقات والبرمجيات، نعمل منذ عام 2020 على تقديم أفضل الحلول التقنية للمستخدمين العرب.</p>
+                    <p>بدأت رحلتنا بفكرة بسيطة وهي توفير تطبيقات آمنة وسهلة الاستخدام للمستخدمين، ومع الوقت تطورنا لنصبح منصة متكاملة لتحميل التطبيقات والخدمات.</p>
+                    <p>نؤمن بأن التكنولوجيا يجب أن تكون في متناول الجميع، ونسعى جاهدين لتقديم أفضل تجربة مستخدم ممكنة.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>مهمتنا</h3>
+                            <p>تقديم تطبيقات وخدمات عالية الجودة تلبي احتياجات المستخدمين العرب بكل موثوقية وأمان.</p>
+                        </div>
+                        <div class="vision">
+                            <i class="fas fa-eye"></i>
+                            <h3>رؤيتنا</h3>
+                            <p>أن نكون المنصة الأولى في العالم العربي لتحميل التطبيقات والخدمات التقنية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="our-values">
+                <h2>قيمنا</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>الأمان</h3>
+                        <p>نضع أمان المستخدمين وبياناتهم في مقدمة أولوياتنا.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>الجودة</h3>
+                        <p>نلتزم بأعلى معايير الجودة في كل ما نقدمه.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-users"></i>
+                        <h3>العمل الجماعي</h3>
+                        <p>نؤمن بقوة العمل الجماعي وتبادل الخبرات.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>الابتكار</h3>
+                        <p>نسعى دائماً لتقديم حلول مبتكرة تلبي احتياجات المستخدمين.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="our-team">
+                <h2>فريقنا</h2>
+                <p>تعرف على الأشخاص الذين يجعلون IV CON ممكناً</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">                      
+                        <h3>مروان جابر</h3>
+                        <span>المؤسس والمدير التنفيذي</span>
+                        <div class="member-social">                      
+                        </div>
+                    </div>
+                    <div class="team-member">                      
+                        <h3>سارة خالد</h3>
+                        <span>مديرة التصميم</span>
+                        <div class="member-social">                           
+                        </div>
+                    </div>
+                    <div class="team-member">                       
+                        <h3>عبدالله ايمن</h3>
+                        <span>مهندس برمجيات</span>
+                        <div class="member-social">                           
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- صفحة تواصل معنا -->
+    <section id="contact" class="contact-page" style="display:none;">
+        <div class="container">
+            <div class="page-header">
+                <h1>تواصل معنا</h1>
+                <p>نحن هنا للإجابة على جميع استفساراتك ومساعدتك في أي وقت</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>ابقى على تواصل</h2>
+                    
+                    <div class="info-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>العنوان</h3>
+                            <p>دمنهور، مصر</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>oooopp12345p@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="feature-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>واتساب</h3>
+                            <p><a href="https://chat.whatsapp.com/B6liB13RBdy66GneO1tui6">انقر هنا للتواصل</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://x.com/MarwanVIP172?t=EyLUU97zbaz_UgF13Pkr9A&s=09"><i class="fab fa-twitter"></i></a>                                               
+                        <a href="https://youtube.com/@rebr.x?si=v6UNHYDrhuV4VLHq"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>أرسل لنا رسالة</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="بريدك الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="الموضوع">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="رسالتك" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-map">
+                <h2>موقعنا على الخريطة</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.276377385288!2d30.47010731513372!3d31.19846998147281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5d3e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sDamanhur%2C%20Egypt!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h2>الأسئلة الشائعة</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            كيف يمكنني تحميل التطبيقات من IV CON؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>يمكنك تحميل التطبيقات بسهولة عن طريق الضغط على زر "تحميل الآن" الموجود في صفحة التطبيق، ثم اتباع التعليمات الظاهرة على الشاشة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            هل التطبيقات آمنة للاستخدام؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نعم، جميع التطبيقات التي نقدمها يتم فحصها بدقة للتأكد من خلوها من الفيروسات والبرمجيات الخبيثة قبل رفعها على المنصة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            كيف يمكنني الإبلاغ عن مشكلة في تطبيق؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>يمكنك التواصل معنا عبر نموذج الاتصال أو عبر واتساب وسنقوم بالرد عليك في أقرب وقت ممكن لحل المشكلة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            هل هناك رسوم لاستخدام التطبيقات؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>جميع التطبيقات التي نقدمها مجانية بالكامل ولا توجد أي رسوم خفية لاستخدامها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- صفحة الإعدادات -->
+    <section id="settings" class="settings-page" style="display:none;">
+        <div class="container">
+            <div class="page-header">
+                <h1>الإعدادات</h1>
+                <p>خصّص تجربتك مع IV CON حسب تفضيلاتك</p>
+            </div>
+            
+            <div class="settings-content">
+                <div class="settings-option">
+                    <h3>مظهر الموقع</h3>
+                    <div class="settings-row">
+                        <span class="toggle-label">الوضع الداكن</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-description">تفعيل الوضع الداكن للموقع لتجربة قراءة أفضل في الإضاءة المنخفضة</div>
+                </div>
+                
+                <div class="settings-option">
+                    <h3>واجهة المستخدم</h3>
+                    <div class="settings-row">
+                        <span class="toggle-label">الوضع المبسط</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="simpleModeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-description">تبسيط واجهة الموقع لإزالة الزخارف والتركيز على المحتوى</div>
+                </div>
+                
+                <div class="settings-option">
+                    <h3>حجم الخط</h3>
+                    <div class="settings-row">
+                        <span class="toggle-label">النص الكبير</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="largeTextToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-description">زيادة حجم الخط لتحسين تجربة القراءة</div>
+                </div>
+                
+                <div class="settings-option">
+                    <h3>ألوان الموقع</h3>
+                    <div class="color-options">
+                        <div class="color-option blue active" onclick="changeColorTheme('blue')"></div>
+                        <div class="color-option green" onclick="changeColorTheme('green')"></div>
+                        <div class="color-option red" onclick="changeColorTheme('red')"></div>
+                        <div class="color-option orange" onclick="changeColorTheme('orange')"></div>
+                        <div class="color-option purple" onclick="changeColorTheme('purple')"></div>
+                    </div>
+                    <div class="settings-description">اختر لون الموقع المفضل لديك</div>
+                </div>
+                
+                <div class="settings-option">
+                    <h3>إشعارات البريد الإلكتروني</h3>
+                    <div class="settings-row">
+                        <span class="toggle-label">تلقي التحديثات</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="notificationsToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-description">تلقي إشعارات حول التحديثات الجديدة والعروض الخاصة</div>
+                </div>
+                
+                <div class="settings-option">
+                    <h3>اللغة</h3>
+                    <select class="form-group" id="languageSelect" style="width:100%; padding:10px; border-radius:10px; border:1px solid #eee;">
+                        <option value="ar">العربية</option>
+                        <option value="en">قريبا لغه جديد</option>
+                        <option value="fr">قريبا لغه جديد</option>
+                    </select>
+                    <div class="settings-description">اختر لغة واجهة الموقع</div>
+                </div>
+                
+                <div class="settings-option">
+                    <h3>إعادة تعيين الإعدادات</h3>
+                    <button class="btn btn-small" onclick="resetSettings()">إعادة التعيين</button>
+                    <div class="settings-description">إعادة جميع الإعدادات إلى القيم الافتراضية</div>
+                </div>
+                
+                <button class="btn" style="margin-top:30px; width:100%;" onclick="saveSettings()">حفظ الإعدادات</button>
+            </div>
+        </div>
+    </section>
+
     <!-- الفوتر -->
     <footer class="footer">
         <div class="container">
@@ -1471,16 +2228,7 @@
                     <div class="social-links">                        
                         <a href="https://x.com/MarwanVIP172?t=VWWMrfIIzInktVg__e9eIw&s=09"><i class="fab fa-twitter"></i></a>
                     </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="http://ChY03iufjIgNHNZ:pvdLK0fA0NQZ28z@localhost:59052/storage/emulated/0/h.html" onclick="window.location.reload()">الرئيسية</a></li>
-                        <li><a href="https://h.top4top.io/p_33854361y0.png">من نحن</a></li>
-                        <li><a href="https://chat.whatsapp.com/B6liB13RBdy66GneO1tui6">تواصل معنا</a></li>                
-                    </ul>
-                </div>
+                </div>                               
                 
                 <div class="footer-col">
                     <h3>خدماتنا</h3>
@@ -1510,6 +2258,34 @@
             </div>
         </div>
     </footer>
+
+    <!-- لوحة الذكاء الاصطناعي -->
+    <div class="ai-toggle" onclick="toggleAIPanel()">
+        <i class="fas fa-robot"></i>
+    </div>
+    
+    <div class="ai-panel">
+        <div class="ai-header" onclick="toggleAIPanel()">
+            <h3>مساعد IV CON الذكي</h3>
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="ai-body">
+            <div class="ai-response">
+                <h3>مرحباً!</h3>
+                <p>أنا مساعد IV CON الذكي، كيف يمكنني مساعدتك اليوم؟</p>
+                <div class="ai-suggestions">
+                    <div class="ai-suggestion" onclick="sendSuggestion('كيف يمكنني تحميل التطبيقات؟')">كيف يمكنني تحميل التطبيقات؟</div>
+                    <div class="ai-suggestion" onclick="sendSuggestion('هل التطبيقات مجانية؟')">هل التطبيقات مجانية؟</div>
+                    <div class="ai-suggestion" onclick="sendSuggestion('كيف أتواصل مع الدعم الفني؟')">كيف أتواصل مع الدعم الفني؟</div>
+                    <div class="ai-suggestion" onclick="sendSuggestion('قائمة الأسئلة الشائعة')">قائمة الأسئلة الشائعة</div>
+                </div>
+            </div>
+        </div>
+        <div class="ai-input">
+            <input type="text" placeholder="اكتب سؤالك هنا..." id="aiQuestionInput" onkeypress="handleAIInputKeypress(event)">
+            <button onclick="sendAIQuestion()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 
     <script>
         // JavaScript للتحكم في الموقع
@@ -1592,6 +2368,9 @@
                     this.reset();
                 });
             }
+            
+            // تحميل الإعدادات المحفوظة
+            loadSettings();
         });
 
         // تأثيرات الظهور عند التمرير
@@ -1613,6 +2392,318 @@
 
         // تشغيل مرة واحدة عند التحميل
         revealOnScroll();
+        
+        // عرض وإخفاء الصفحات
+        function showPage(page) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            if (page === 'home') {
+                document.querySelector('.hero').style.display = 'block';
+                document.querySelector('.services').style.display = 'block';
+                document.querySelector('.features').style.display = 'block';
+                document.querySelector('.stats').style.display = 'block';
+                document.querySelector('.testimonials').style.display = 'block';
+                document.querySelector('.cta').style.display = 'block';
+                document.querySelector('.footer').style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                document.querySelector(`.${page}-page`).style.display = 'block';
+                document.querySelector('.footer').style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+            
+            // تحديث القائمة النشطة
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (page === 'home') {
+                document.querySelector('.nav-links a:first-child').classList.add('active');
+            } else {
+                document.querySelector(`.nav-links a[onclick="showPage('${page}')"]`).classList.add('active');
+            }
+        }
+        
+        // تغيير سمة الألوان
+        function changeColorTheme(color) {
+            // إزالة الفعالية من جميع الأزرار
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            // إضافة الفعالية للزر المحدد
+            event.target.classList.add('active');
+            
+            // تغيير الألوان الأساسية حسب الاختيار
+            const root = document.documentElement;
+            
+            switch(color) {
+                case 'blue':
+                    root.style.setProperty('--primary-color', '#4e54c8');
+                    root.style.setProperty('--secondary-color', '#8f94fb');
+                    break;
+                case 'green':
+                    root.style.setProperty('--primary-color', '#28a745');
+                    root.style.setProperty('--secondary-color', '#5cb85c');
+                    break;
+                case 'red':
+                    root.style.setProperty('--primary-color', '#dc3545');
+                    root.style.setProperty('--secondary-color', '#d9534f');
+                    break;
+                case 'orange':
+                    root.style.setProperty('--primary-color', '#fd7e14');
+                    root.style.setProperty('--secondary-color', '#f0ad4e');
+                    break;
+                case 'purple':
+                    root.style.setProperty('--primary-color', '#6f42c1');
+                    root.style.setProperty('--secondary-color', '#9d65c9');
+                    break;
+            }
+        }
+        
+        // حفظ الإعدادات
+        function saveSettings() {
+            const settings = {
+                darkMode: document.getElementById('darkModeToggle').checked,
+                simpleMode: document.getElementById('simpleModeToggle').checked,
+                largeText: document.getElementById('largeTextToggle').checked,
+                notifications: document.getElementById('notificationsToggle').checked,
+                language: document.getElementById('languageSelect').value,
+                colorTheme: document.querySelector('.color-option.active').classList[1] // blue, green, etc.
+            };
+            
+            localStorage.setItem('ivconSettings', JSON.stringify(settings));
+            applySettings();
+            
+            // إظهار رسالة نجاح
+            showAlert('تم حفظ الإعدادات بنجاح!', 'success');
+        }
+        
+        // تحميل الإعدادات
+        function loadSettings() {
+            const savedSettings = localStorage.getItem('ivconSettings');
+            
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                
+                document.getElementById('darkModeToggle').checked = settings.darkMode;
+                document.getElementById('simpleModeToggle').checked = settings.simpleMode;
+                document.getElementById('largeTextToggle').checked = settings.largeText;
+                document.getElementById('notificationsToggle').checked = settings.notifications;
+                document.getElementById('languageSelect').value = settings.language;
+                
+                // تفعيل زر اللون المناسب
+                document.querySelectorAll('.color-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.classList.contains(settings.colorTheme)) {
+                        option.classList.add('active');
+                    }
+                });
+                
+                // تغيير سمة الألوان
+                changeColorTheme(settings.colorTheme);
+                
+                applySettings();
+            }
+        }
+        
+        // تطبيق الإعدادات
+        function applySettings() {
+            const darkMode = document.getElementById('darkModeToggle').checked;
+            const simpleMode = document.getElementById('simpleModeToggle').checked;
+            const largeText = document.getElementById('largeTextToggle').checked;
+            
+            // تطبيق الوضع الداكن
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+            
+            // تطبيق الوضع المبسط
+            if (simpleMode) {
+                document.body.classList.add('simple-mode');
+            } else {
+                document.body.classList.remove('simple-mode');
+            }
+            
+            // تطبيق حجم الخط الكبير
+            if (largeText) {
+                document.body.classList.add('large-text');
+            } else {
+                document.body.classList.remove('large-text');
+            }
+        }
+        
+        // إعادة تعيين الإعدادات
+        function resetSettings() {
+            if (confirm('هل أنت متأكد أنك تريد إعادة تعيين جميع الإعدادات إلى الافتراضية؟')) {
+                localStorage.removeItem('ivconSettings');
+                
+                // إعادة تعيين القيم الافتراضية
+                document.getElementById('darkModeToggle').checked = false;
+                document.getElementById('simpleModeToggle').checked = false;
+                document.getElementById('largeTextToggle').checked = false;
+                document.getElementById('notificationsToggle').checked = true;
+                document.getElementById('languageSelect').value = 'ar';
+                
+                // إعادة تعيين سمة الألوان
+                document.querySelectorAll('.color-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.classList.contains('blue')) {
+                        option.classList.add('active');
+                    }
+                });
+                
+                changeColorTheme('blue');
+                applySettings();
+                
+                showAlert('تم إعادة تعيين الإعدادات بنجاح!', 'success');
+            }
+        }
+        
+        // عرض رسالة تنبيه
+        function showAlert(message, type) {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            alert.style.position = 'fixed';
+            alert.style.bottom = '20px';
+            alert.style.right = '20px';
+            alert.style.padding = '15px 25px';
+            alert.style.backgroundColor = type === 'success' ? '#28a745' : '#dc3545';
+            alert.style.color = 'white';
+            alert.style.borderRadius = '5px';
+            alert.style.zIndex = '10000';
+            alert.style.animation = 'fadeIn 0.3s ease';
+            
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    alert.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        /* لوحة الذكاء الاصطناعي المحسنة */
+        let aiPanelOpen = false;
+        
+        function toggleAIPanel() {
+            const panel = document.querySelector('.ai-panel');
+            aiPanelOpen = !aiPanelOpen;
+            
+            if (aiPanelOpen) {
+                panel.style.display = 'block';
+                document.getElementById('aiQuestionInput').focus();
+            } else {
+                panel.style.display = 'none';
+            }
+        }
+        
+        function handleAIInputKeypress(e) {
+            if (e.key === 'Enter') {
+                sendAIQuestion();
+            }
+        }
+        
+        function sendSuggestion(question) {
+            document.getElementById('aiQuestionInput').value = question;
+            sendAIQuestion();
+        }
+        
+        function sendAIQuestion() {
+            const input = document.getElementById('aiQuestionInput');
+            const question = input.value.trim();
+            
+            if (question === '') return;
+            
+            const aiBody = document.querySelector('.ai-body');
+            
+            // إضافة السؤال
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'ai-response';
+            questionDiv.innerHTML = `
+                <h3>أنت:</h3>
+                <p>${question}</p>
+            `;
+            aiBody.appendChild(questionDiv);
+            
+            // إضافة مؤشر تحميل
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'ai-response';
+            loadingDiv.innerHTML = `
+                <h3>IV CON AI:</h3>
+                <p>جاري البحث عن إجابة...</p>
+            `;
+            aiBody.appendChild(loadingDiv);
+            
+            input.value = '';
+            aiBody.scrollTop = aiBody.scrollHeight;
+            
+            // محاكاة استجابة الذكاء الاصطناعي
+            setTimeout(() => {
+                loadingDiv.innerHTML = `
+                    <h3>IV CON AI:</h3>
+                    <p>${getAIResponse(question)}</p>
+                `;
+                
+                // إضافة اقتراحات إذا كانت الاستجابة عامة
+                if (question.includes('قائم') || question.toLowerCase().includes('مساعدة')) {
+                    const suggestionsDiv = document.createElement('div');
+                    suggestionsDiv.className = 'ai-suggestions';
+                    suggestionsDiv.innerHTML = `
+                        <div class="ai-suggestion" onclick="sendSuggestion('كيف يمكنني تحميل التطبيقات؟')">كيف يمكنني تحميل التطبيقات؟</div>
+                        <div class="ai-suggestion" onclick="sendSuggestion('هل التطبيقات مجانية؟')">هل التطبيقات مجانية؟</div>
+                        <div class="ai-suggestion" onclick="sendSuggestion('كيف أتواصل مع الدعم الفني؟')">كيف أتواصل مع الدعم الفني؟</div>
+                        <div class="ai-suggestion" onclick="sendSuggestion('ما هي أحدث التطبيقات؟')">ما هي أحدث التطبيقات؟</div>
+                    `;
+                    loadingDiv.appendChild(suggestionsDiv);
+                }
+                
+                aiBody.scrollTop = aiBody.scrollHeight;
+            }, 1000);
+        }
+        
+        // محاكاة ردود الذكاء الاصطناعي
+        function getAIResponse(question) {
+            const lowerQuestion = question.toLowerCase();
+            
+            if (lowerQuestion.includes('تحميل') || lowerQuestion.includes('تطبيق')) {
+                return 'يمكنك تحميل التطبيقات من خلال الضغط على زر "تحميل الآن" في صفحة الخدمات. جميع التطبيقات لدينا آمنة وخالية من الفيروسات.';
+            } 
+            else if (lowerQuestion.includes('مساعدة') || lowerQuestion.includes('دعم')) {
+                return 'يمكنك التواصل مع فريق الدعم عبر صفحة "تواصل معنا" أو عبر واتساب وسنكون سعداء بمساعدتك.';
+            } 
+            else if (lowerQuestion.includes('حساب') || lowerQuestion.includes('تسجيل')) {
+                return 'لا تحتاج إلى إنشاء حساب لتحميل التطبيقات من IV CON، كل التطبيقات متاحة للتحميل مباشرة.';
+            } 
+            else if (lowerQuestion.includes('مجاني') || lowerQuestion.includes('سعر')) {
+                return 'جميع التطبيقات في IV CON مجانية بالكامل ولا توجد أي رسوم خفية.';
+            } 
+            else if (lowerQuestion.includes('تحديث') || lowerQuestion.includes('جديد')) {
+                return 'نقوم بتحديث التطبيقات بشكل دوري لضمان حصولك على أحدث الإصدارات. يمكنك متابعة صفحتنا على تويتر لمعرفة آخر التحديثات.';
+            } 
+            else if (lowerQuestion.includes('أمان') || lowerQuestion.includes('حماية')) {
+                return 'جميع التطبيقات في IV CON يتم فحصها بدقة للتأكد من خلوها من الفيروسات والبرمجيات الخبيثة قبل رفعها على المنصة.';
+            }
+            else if (lowerQuestion.includes('قائم') || lowerQuestion.includes('مساعدة')) {
+                return 'يمكنني مساعدتك في الإجابة على الأسئلة التالية:';
+            }
+            else {
+                const responses = [
+                    'أنا آسف، لم أفهم سؤالك بشكل كامل. يمكنك إعادة صياغته؟',
+                    'هل يمكنك توضيح سؤالك أكثر؟ يمكنك كتابة "مساعدة" لرؤية قائمة بالأسئلة الشائعة.',
+                    'حاليًا لدي معلومات محدودة، لكن يمكنك التواصل مع فريق الدعم للحصول على مساعدة أكثر تفصيلاً.',
+                    'هذا سؤال جيد! للأسف لا أملك إجابة كافية الآن، لكن سأقوم بتوجيه سؤالك إلى الفريق المختص.',
+                    'شكرًا لسؤالك. يمكنك العثور على الكثير من المعلومات في قسم الأسئلة الشائعة أو صفحة "من نحن".'
+                ];
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+        }
     </script>
 </body>
 </html>
